@@ -32,4 +32,4 @@ import { ConnectionName } from '../enums/connection-name';
     }),
   ],
 })
-export class DefaultDatabaseModule { }
+export class DefaultDatabaseModule {}

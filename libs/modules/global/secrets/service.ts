@@ -3,11 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { LevelWithSilent } from 'pino';
 
 import { AbstractSecretsService } from './abstract';
-import {
-  AUTH_SERVICE_ENVIRONMENT,
-  DEFAULT_DB_ENVIRONMENT,
-  NOTIFICATION_SERVICE_ENVIRONMENT
-} from './enum';
+import { AUTH_SERVICE_ENVIRONMENT, DEFAULT_DB_ENVIRONMENT, NOTIFICATION_SERVICE_ENVIRONMENT } from './enum';
 
 @Injectable()
 export class SecretsService extends ConfigService implements AbstractSecretsService {
@@ -30,8 +26,10 @@ export class SecretsService extends ConfigService implements AbstractSecretsServ
       DATABASE: this.get<string>(DEFAULT_DB_ENVIRONMENT.DATABASE),
     },
 
-    DEFAULT_DB_SLAVES: this.get<string>(DEFAULT_DB_ENVIRONMENT.SLAVES) ? JSON.parse(this.get<string>(DEFAULT_DB_ENVIRONMENT.SLAVES)) : []
-  }
+    DEFAULT_DB_SLAVES: this.get<string>(DEFAULT_DB_ENVIRONMENT.SLAVES)
+      ? JSON.parse(this.get<string>(DEFAULT_DB_ENVIRONMENT.SLAVES))
+      : [],
+  };
 
   NOTIFICATION_SERVICE = {
     PORT: this.get<number>(NOTIFICATION_SERVICE_ENVIRONMENT.PORT),
@@ -42,7 +40,6 @@ export class SecretsService extends ConfigService implements AbstractSecretsServ
     URL: this.get<string>(AUTH_SERVICE_ENVIRONMENT.URL),
   };
 
-
   MESSAGE_QUEUE = {
     RMQ_URL: this.get('RABBIT_MQ_URL'),
     RMQ_OPTIONS: {
@@ -51,6 +48,6 @@ export class SecretsService extends ConfigService implements AbstractSecretsServ
         durable: false,
       },
       bufferLogs: true,
-    }
+    },
   };
 }

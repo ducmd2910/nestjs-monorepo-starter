@@ -30,7 +30,7 @@ import { MessageQueueService } from './message-queue.service';
   ],
   exports: [AbstractMessageQueue],
 })
-export class MessageQueueModule { }
+export class MessageQueueModule {}
 
 // export library
 export { ackErrorHandler, RabbitRPC, RabbitSubscribe, requeueErrorHandler } from '@golevelup/nestjs-rabbitmq';

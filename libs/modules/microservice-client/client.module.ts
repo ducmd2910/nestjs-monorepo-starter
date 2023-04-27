@@ -25,4 +25,4 @@ import { AbstractSecretsService } from '../global/secrets/abstract';
   ],
   exports: [ClientsModule],
 })
-export class MicroserviceClientModule { }
+export class MicroserviceClientModule {}

@@ -9,4 +9,4 @@ const ApiModules = [HealthModule];
   imports: [GlobalModule, DefaultDatabaseModule, ...ApiModules],
   providers: [],
 })
-export class MainModule { }
+export class MainModule {}
