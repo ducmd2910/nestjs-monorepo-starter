@@ -1,0 +1,1 @@
+export const TEST_ROUTING_KEY = 'TEST_ROUTING_KEY';

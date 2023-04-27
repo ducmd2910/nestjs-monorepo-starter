@@ -1,0 +1,1 @@
+export const TEST_EXCHANGE = 'TEST_EXCHANGE';

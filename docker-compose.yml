@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  redis:
+    container_name: keplerapp-redis
+    image: 'redis:alpine'
+    ports:
+      - 6379:6379
+  redis-commander:
+    container_name: keplerapp-redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: always
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    ports:
+      - 8081:8081
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+

@@ -1,0 +1,2 @@
+export const TEST_QUEUE = 'TEST_QUEUE';
+export const NOTIFICATION_QUEUE = 'NOTIFICATION_QUEUE';
